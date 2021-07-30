@@ -3,7 +3,12 @@
 
 ## Installs:
 - Download MyCrypto
+> https://mycrypto.com/
+
+
 - Install GoEthereum "Geth & Tools 1.9.7" under stable releases
+> https://geth.ethereum.org/
+
 
 ![Geth & Tools](/images/gethtools.png)
 
@@ -12,7 +17,7 @@
 - Decompress the file, then rename the whole folder as "sandbox-blockchain-tools" in a easy to access location from the terminal. 
 
 
-## Setting up Test Blockchain PoA Network:
+## Setting Up A Test Blockchain PoA Network:
 
 - Open up a text editor to copy and paste important information 
 
@@ -28,14 +33,19 @@
 ![Mnemonic Phrase](/images/mnemonic.png)
 
 2. In the first terminal window, change directory into "sandbox-blockchain-tools" then run the following code:
-- ./geth --datadir node1 account new
-- ./geth --datadir node2 account new
+ 
+
+ ``` ./geth --datadir node1 account new ```
+
+
+ ```./geth --datadir node2 account new ```
+
 
 ![Node Setup](/images/nodeaccountsetup.png)
 
 3. Copy and paste your addresses and secret information into your text file for both nodes 1 & 2
 
-4. Next run ./puppeth to set up your Proof of Authority network
+4. Next run ``` ./puppeth ``` to set up your Proof of Authority network
 
 5. Name the network "sandboxnet"
 
@@ -44,18 +54,18 @@
 ![PoA Setup](/images/poasetup.png)
 ![Export](/images/finishexport.png)
 
-7. Once step 6 is complete Cntl C to end then, initalize your nodes with the following: 
+7. Once step 6 is complete ```CTRL C``` to end then, initalize your nodes with the following: 
 
 
 
-- ./geth --datadir node1 init networkname.json
+``` ./geth --datadir node1 init networkname.json ```
 
-- ./geth --datadir node2 init networkname.json
+``` ./geth --datadir node2 init networkname.json ```
 
 ![Write Genesis Block](/images/genesis.png)
 
 8. Get your nodes running with the following commands and type in your password to run:
-- ./geth --datadir node1 --unlock "SEALER_ONE_ADDRESS" --mine --rpc --allow-insecure-unlock
+- ``` ./geth --datadir node1 --unlock "SEALER_ONE_ADDRESS" --mine --rpc --allow-insecure-unlock ```
 
 
 
@@ -63,9 +73,9 @@
 
 ![Initalize Node 1](/images/enode1.png)
 
-- ./geth --datadir node2 --unlock "SEALER_TWO_ADDRESS" --mine --port 30304 --bootnodes "enode://SEALER_ONE_ENODE_ADDRESS@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock 
+- ``` ./geth --datadir node2 --unlock "SEALER_TWO_ADDRESS" --mine --port 30304 --bootnodes "enode://SEALER_ONE_ENODE_ADDRESS@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock ```
 
-![Initalize Node 2](/images/initalizenode2.png)
+![Initalize Node 2](/images/initializenode2.png)
 
 9. You should now see your nodes running and mining like so:
 
@@ -85,7 +95,7 @@
 
 12. Then sign into your wallet using your Keystore file in your node1 folder>keystore until you see your address with your prefunded account. 
 
-![Sandboxnet](/images/sandboxnet.png)
+![Sandboxnet](/images/sanboxnet.png)
 
 13. Now lets try sending a transaction to ourselves
 
@@ -105,4 +115,4 @@
 ![Alt Address](/images/altaddress.png)
 
 
-# Congrats, you've successfully set up your own private Blockchain! :white_large_square: :link: :white_large_square: :link:
+# Congrats, you've successfully set up your own private Blockchain! :white_large_square: :link: :white_large_square: :link: :white_large_square: :link: :white_large_square: :link::white_large_square: :link: :white_large_square: :link::white_large_square: :link: :white_large_square: :link::white_large_square: :link: :white_large_square: :link:
